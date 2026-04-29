@@ -1,0 +1,26 @@
+/*
+1000 - HELLO WORD!
+BEM-VINDO AO BEECROWD!
+
+O SEU PRIMEIRO PROGRAMA EM QUALQUER LINGUAGEM DE PROGRAMAÇÃO NORMALMENTE É O
+"HELLO WORLD!". NESTE PRIMEIRO PROBLEMA TUDO O QUE VOCÊ PRECISA FAZER É IMPRIMIR
+ESTA MENSAGEM NA TELA.
+
+ENTRADA: ESTE PROBLEMA NÃO POSSUI NENHUMA ENTRADA.
+
+SAIDA: VOCÊ DEVE IMPRIMIR A MENSAGEM "HELLO WORLD!" E EM SEGUIDA O FINAL DE LINHA,
+CONFORME O EXEMPLO ABAIXO.
+*/
+
+//biblioteca
+#include <iostream>
+
+using namespace std; //espaços
+
+int main() //função principal
+{
+    //saida de dados
+    cout << "Hello World!" << endl;
+    
+    return 0;
+}
