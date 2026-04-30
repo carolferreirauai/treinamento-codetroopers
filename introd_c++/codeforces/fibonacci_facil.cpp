@@ -22,7 +22,6 @@ SE HOUVER MÚLTIPLAS RESPOSTAS, IMPRIMA QUALQUR UMA DELAS.
 
 //biblioteca
 #include <iostream>
-#include <vector>
 #include <bits/stdc++.h> //todas bibliotecas
 
 using namespace std; //espaços
@@ -30,45 +29,66 @@ using namespace std; //espaços
 int main() //função principal
 {
     //declaração de variaveis
-    int n; //número de entrada
-    int sz; //tamanho temporário
-    int indice = -1; //indice de n na sequência (-1, não encontrado)
+    int n; //número inteiro
+    int indice = -1; //indice de n na sequência
+    int fibonacci[50]; //vetor fixo (50 posições)
+    int auxiliar = 2; //auxiliar começa em 2, pois fibonacci 0 e 1 já estão preenchida
 
     //entrada de dados
-    cin >> n; //ler valor
+    //le o número inteiro, se é um número de fibonacci
+    cin >> n;
 
     //desenvolvimento
-    vector <long long> fib; //criar o vector de fibonacci dinamicamente
-    fib.push_back(0); //f_0 = 0
-    fib.push_back(1); //f_1 = 1
+    //base da sequência
+    fibonacci[0] = 0;
+    fibonacci[1] = 1;
 
-    //gera fib até ultrapassar 10^9
-    //usa long long para não estourar nos cálculos intermediários
-    while(fib.back() < 1e9)
+    //gera fibonacci enquanto o último valor for menor que 10^9
+    for (int i = 2; fibonacci[i-1] < 1e9; i++)
     {
-        sz = fib.size();
-        fib.push_back(fib[sz-1] + fib[sz-2]); //f_i = f_{i-1} + f_{i-2}
+        fibonacci[i] = fibonacci[i-1] + fibonacci[i-2]; //calculo de fibonacci
+        auxiliar++; //conta mais um
     }
 
-    //percorre o vector procurando n
-    for (int i = 0; i < (int)fib.size(); i++)
+    //percorre o vetor procurado n
+    for (int i = 0; i < auxiliar; i++)
     {
-        if (fib[i] == n)
+        if (fibonacci[i] == n) 
         {
-            indice = i; //guarda o indice onde n foi encontrad
-            break; //para assim que achar quebrar.
+            indice = i; //guarda onde n foi encontrado
+            break; //para assim que achar
         }
-    } 
-
-    // se indice >= 4, a tripla 0 + f_{indice-2} + f_{indice-1} funciona
-    // os 3 são sempre distintos e somam exatamente n
-    if (indice >= 4)
-    {
-        cout << 0 << " " << fib [indice - 2] << " " << fib[indice - 1] << endl;
     }
-    else //indice < 4: n é peqeuno demais, impossivel ter 3 distintos
+
+    //imprime a tripla conforme o índice
+    if(indice == 0) //n = 0
+    {
+        cout << "0 0 0" << endl;
+    }
+    else if (indice == 1) //n = 1
+    {
+        cout << "0 0 1" << endl;
+    }
+    else if (indice == 2) //n = 1
+    {
+        cout << "0 0 1" << endl;
+    }
+    else if (indice == 3) //n = 2
+    {
+        cout << "0 1 1" << endl;
+    }
+    else if (indice == 4) //n = 3
+    {
+        cout << "1 1 1" << endl;
+    }
+    else if (indice >= 5) //n >= 5
+    {
+        cout << 0 << " " << fibonacci[indice-2] << " " << fibonacci[indice-1] << endl;
+    }
+    else
     {
         cout << "I'm too stupid to solve this problem" << endl;
+
     }
 
     return 0;
