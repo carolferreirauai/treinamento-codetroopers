@@ -15,7 +15,7 @@ MENOR VALOR LIDO NA ENTRADA. A SEGUNDA LINHA APRESENTA A MENSAGEM "POSICAO:"
 LEMBRANDO QUE O VETOR INICIA NA POSIÇÃO ZERO. 
 */
 //biblioteca
-#include <iostream>
+#include <iostream> //entrada e saídas
 #include <bits/stdc++.h> //todas bibliotecas
 
 using namespace std;
@@ -24,22 +24,23 @@ int main() //função principal
 {
     //declaração de variaveis
     int vetor_x[1000]; //vetor de n;
-    int n;
-    int menor_valor;
-    int posicao = -1;
+    int n; //quantidade de elemento para serem lidos
+    int menor_valor; //guardar o menor valor
+    int posicao = -1; //guardar a posição do menor valor (-1, vazio)
 
     //entrada de dados
-    cin >> n; //número de elemento para ser lidos
+    cin >> n; //quantidade de elementos
 
+    //preenche as posições
     for(int i = 0; i < n; i++)
     {
         cin >> vetor_x[i];
     }
 
-    menor_valor = vetor_x[0];
+    menor_valor = vetor_x[0]; //assume que o primeiro é o menor
     posicao = 0;
 
-    for (int i = 1; i < n; i++)
+    for (int i = 1; i < n; i++) //começa no indice 1, porque 0 já foi assumido
     {
         if (vetor_x[i] < menor_valor)
             {
@@ -47,10 +48,10 @@ int main() //função principal
                 posicao = i; //verificar a posição
             }
     }
-   
 
     //saida de dados
     cout << "Menor valor: " << menor_valor << endl; //saida do menor valor
     cout << "Posicao: " << posicao << endl; //saida da posição que está esse menor valor
 
+    return 0;
 }
