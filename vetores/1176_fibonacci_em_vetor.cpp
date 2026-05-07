@@ -26,14 +26,14 @@ int main() //função principal
     //declaração de váriaveis
     int T; //números de casos de testes.
     int N; //N-esimo
-    unsigned long long fibonacci[61]; //fibonacci
+    unsigned long long fibonacci[61]; //vetor para armazenar fibonacci
 
     //definir a base
     fibonacci[0] = 0;
     fibonacci[1] = 1;
 
     //desenvolvimentos
-    for (int i = 2; i < 60; i++)
+    for (int i = 2; i <= 60; i++) //int i, incia em 2, porque 0 e 1, já estão pré estibulado
     {
         fibonacci[i] = fibonacci[i-1] + fibonacci [i-2]; //calculo de fibonacci
     }
