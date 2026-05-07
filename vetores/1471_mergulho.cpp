@@ -66,7 +66,7 @@ int main() //função principal
         //saida de dados
         if (N == R)
         {
-            cout << "*" << endl; //todos voltaram
+            cout << "*" << endl; //tod voltaram
         }
         else
         {
