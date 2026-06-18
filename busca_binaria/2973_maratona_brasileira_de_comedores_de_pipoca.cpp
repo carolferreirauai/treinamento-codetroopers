@@ -44,7 +44,7 @@ using namespace std;
 int Pi[100005]; //quantidade de pipocas
 
 //função testadora - o juiz
-bool testa(int tempo, int N, int C, int T)
+bool testa(long long tempo, long long N, long long C, long long T)
 {
     long long competidores_usados = 1;
     long long pipocas_comidas_agora = 0;
